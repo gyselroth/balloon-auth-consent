@@ -1,0 +1,32 @@
+{
+  "title": "balloon",
+  "login": {
+    "username": "Benutzername",
+    "password": "Passwort",
+    "login": "Login",
+    "logout": "Logout",
+    "code": "Code",
+    "multi_factor_auth": "Dieses Konto ist mit Multi-Faktor-Authentisierung geschützt. Bitte gib den Code vom google authenticator ein:",
+    "dont_remind_webauthn": "Nicht mehr danach fragen.",
+    "setup_webauthn": "Dein Gerät unterstützt eine Form von Authentifzierung ohne Passwort und kann jetzt eingerichtet werden oder später in den Benutzereinstellungen.",
+    "events": "Events",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "help": "Hilfe",
+    "error": {
+      "server": "Der balloon-Server meldet aktuell eine Störung, bitte versuche es später erneut.",
+      "credentials": "Der Benutzername oder das Passwort ist falsch.",
+      "code": "Der Code ist ungültig.",
+      "oidc": " Ein Fehler ist aufgetreten bei der Authentifizierung deines Kontos über den gewählten Identity Provider.",
+      "webauthn_setup": "Ein Fehler ist aufgetreten bei der Einrichtung der Authentifzierung ohne Passwort. Du kannst diesen Schritt ignorieren oder es nocheinmal versuchen.",
+      "webauthn": "Ein Fehler ist aufgetreten bei der Authentifzierung ohne Passwort. Du kannst Benutzername/Passwort eingeben oder es nochmals versuchen."
+    }
+  },
+  "button": {
+    "save": "Speichern",
+    "setup": "Einrichten",
+    "ignore": "Ignorieren",
+    "cancel": "Abbrechen",
+    "open": "Öffnen"
+  }
+}

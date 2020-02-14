@@ -1,0 +1,19 @@
+dist: trusty
+sudo: false
+language: node_js
+node_js: '12'
+os:
+- linux
+notifications:
+  email: false
+before_install:
+- export version=$TRAVIS_TAG
+- if [ "${version:0:1}" == "v" ]; then version=${version:1}; fi;
+script: make VERSION=$version deb tar
+before_deploy:
+- if [[ "$version" == *"-"* ]]; then export docker_tag=latest-unstable; else export docker_tag=latest; fi;
+after_deploy:
+  - test "$TRAVIS_TAG" != "" && version=${TRAVIS_TAG:1};
+  - test "$TRAVIS_TAG" != "" && docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - test "$TRAVIS_TAG" != "" && docker push gyselroth/balloon-auth:$version
+  - test "$TRAVIS_TAG" != "" && docker push gyselroth/balloon-auth:$docker_tag

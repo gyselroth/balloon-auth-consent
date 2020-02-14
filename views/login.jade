@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  #login
+    #login-box
+      #login-header
+        span#login-logo
+        span(data-i18n='title') balloon
+      if serverError
+        #login-server-error.error-message=t('login.error.server')
+      #login-body
+        if error
+          #login-error.error-message=t(error)
+        #login-setup-webauthn
+          p(data-i18n='login.setup_webauthn')
+          #login-webauthn-setup-error.error-message(data-i18n='login.error.webauthn_setup')
+          input.fs-button-primary(type='submit', name='submit', data-i18n='[value]button.setup')
+          div
+            input#webauthn-reminder(type='checkbox', name='webauthn-reminder')
+            label(for='webauthn-reminder', data-i18n='login.dont_remind_webauthn')
+          input.fs-button-secondary(type='submit', name='ignore', data-i18n='[value]button.ignore')
+        form(action="/login",method="POST")
+          #login-basic
+              input(type="hidden",name="_csrf",value=csrfToken)
+              input(type="hidden",name="challenge",value=challenge)
+              input(type='text', name='username', autocomplete='current-username', placeholder=t('login.username'))
+              input(type='password', name='password', autocomplete='current-password', placeholder=t('login.password'))
+              #login-mfa
+                p(data-i18n='login.multi_factor_auth')
+                input(type='text', name='code', autocomplete='off', placeholder=t('login.code'))
+              #login-recaptcha.g-recaptcha
+              .login-select
+                select#login-locale
+                  each val, index in locales
+                    option(value=val[0])=val[1]
+                svg.gr-icon.gr-i-expand
+                  use(xlink:href='<%= iconsSvg %>#expand')
+              input.fs-button-primary(type='submit',id='accept', name='submit', value=t('login.login'))
+            #login-webauthn
+              svg.gr-icon.gr-i-fingerprint(viewBox='0 0 24 24')
+                use(xlink:href='<%= iconsSvg %>#fingerprint')
+          #login-oidc-error.error-message(t('login.error.oidc'))
+          #login-oidc
+            ul
+              each val, index in oidcProviders
+                input(type="submit" name="oidc" value=""+val.providerUrl+"" style='background-image: url("data:image/png;base64, '+val.imgBase64)

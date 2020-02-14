@@ -1,0 +1,63 @@
+{
+  "name": "hydra-login-consent-logout",
+  "version": "0.0.0",
+  "bin": {
+    "hydra-login-consent-logout": "./bin/www"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "@gyselroth/icon-collection": "^1.0.12",
+    "@openid/appauth": "^1.2.6",
+    "body-parser": "^1.18.3",
+    "bundle-loader": "^0.5.6",
+    "cookie-parser": "~1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "~2.2.0",
+    "express": "^4.16.4",
+    "got": "^10.5.5",
+    "i18next": "3.x",
+    "i18next-browser-languagedetector": "^2.2.4",
+    "i18next-express-middleware": "^1.9.1",
+    "jade": "~1.11.0",
+    "morgan": "github:expressjs/morgan",
+    "node-fetch": "^2.1.2",
+    "openid-client": "^3.12.2",
+    "qrcode.es": "^1.0.0",
+    "querystring": "^0.2.0",
+    "serve-favicon": "^2.5.0",
+    "ubuntu-fontface": "^0.1.13",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-join": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "1.7.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.5",
+    "napa": "^3.0.0",
+    "node-sass": "^4.13.1",
+    "robotstxt-webpack-plugin": "^7.0.0",
+    "sass-loader": "^7.3.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "svgxuse": "^1.2.6",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2",
+    "webpack-merge": "^4.2.2"
+  }
+}
