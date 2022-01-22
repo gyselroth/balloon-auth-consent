@@ -24,7 +24,7 @@
     "i18next-express-middleware": "^1.9.1",
     "jade": "~1.11.0",
     "morgan": "github:expressjs/morgan",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^3.1.1",
     "openid-client": "^3.12.2",
     "qrcode.es": "^1.0.0",
     "querystring": "^0.2.0",
